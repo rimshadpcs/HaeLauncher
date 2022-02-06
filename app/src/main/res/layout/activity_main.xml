@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <DigitalClock
+        android:id="@+id/dc_time"
+        android:textSize="50sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginTop="200dp"
+        android:fontFamily="monospace"
+        android:textColor="@color/white"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/iv_battery_level"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/battery"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/dc_time"
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:id="@+id/tv_battery_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/iv_battery_level"
+        app:layout_constraintTop_toBottomOf="@id/dc_time"
+        tools:ignore="MissingConstraints"
+        android:layout_marginTop="50dp"
+        android:fontFamily="erif-monospace"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="35sp" />
+
+    <Button
+        android:id="@+id/bt_launch_apps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_battery_level"
+        android:text="@string/launch_apps"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:textColor="#8C9EFF"
+        android:layout_marginTop="50dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_weather"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        app:cardCornerRadius="20dp"
+        android:padding="10dp"
+        android:layout_marginTop="50dp"
+        app:cardBackgroundColor="#8C9EFF"
+        app:layout_constraintTop_toBottomOf="@id/bt_launch_apps">
+
+        <RelativeLayout
+            android:id="@+id/rl_cardWeather"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_weather"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                tools:ignore="MissingConstraints"
+                android:src="@drawable/weather"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:contentDescription="@string/todo" />
+
+            <TextView
+                android:id="@+id/tv_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:textSize="30sp"
+                android:fontFamily="monospace"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/iv_weather"
+                android:textStyle="bold"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/tv_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/iv_weather"
+                android:layout_below="@+id/tv_weather"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/tv_country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:fontFamily="monospace"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/iv_weather"
+                android:layout_below="@+id/tv_city"
+                android:layout_marginTop="20dp"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:layout_below="@+id/tv_country"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                tools:ignore="MissingConstraints" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

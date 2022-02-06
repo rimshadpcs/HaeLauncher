@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Hae</string>
+    <string name="_100">100%</string>
+    <string name="launch_apps">Launch apps</string>
+    <string name="todo">TODO</string>
+    <string name="_5_c">5°C</string>
+    <string name="city">City</string>
+    <string name="country">Country</string>
+    <string name="sunny_intervals_and_light_winds">Sunny intervals and light winds</string>
+</resources>
